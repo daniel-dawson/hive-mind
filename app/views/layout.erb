@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>HiveMind</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script defer="defer" src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/stylesheets/normalize.css"/>
+    <link rel="stylesheet" href="/stylesheets/main.css"/>
+  </head>
+  <body>
+    <header>
+
+      <nav class="flex-container nav-flex">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+          <i class="fas fa-bars"></i>
+        </span>
+      <img class="logo" src="images/food.png" alt="HiveMind logo"/>
+        <ul class="flex-container nav-start main-nav js-menu ">
+
+          <li class="nav-items-left">
+            <a href="#">News</a>
+          </li>
+          <li class="nav-items-left">
+            <a href="#">Near you</a>
+          </li>
+          <li class="nav-items-left">
+            <a href="#">About</a>
+          </li>
+        </ul>
+        <!-- These will be pofile and sign out buttons -->
+
+        <ul class="flex-container nav-end main-nav js-menu nav-items-right">
+          <li class="nav-items-right">Profile</li>
+          <li class="nav-items-right">Sign out</li>
+        </ul>
+      </nav>
+    </header>
+    <div class="wrapper">
+
+      <%= yield %>
+
+      <footer class="branding">
+        <small>&copy; 2019
+          <strong>HiveMind</strong>
+        </small>
+      </footer>
+    </div>
+    <script src="javascripts/index.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  </body>
+</html>

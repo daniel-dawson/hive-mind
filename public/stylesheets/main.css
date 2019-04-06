@@ -1,0 +1,77 @@
+/* Global Styles */
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utility */
+
+.flex-container {
+  display: flex;
+}
+
+/* Navigation Bar */
+
+nav {
+  font-size: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.logo {
+}
+
+.nav-flex {
+  align-items: center;
+}
+
+.nav-items-left {
+  margin-right: 40px;
+}
+
+.nav-items-right {
+  margin-left: 40px;
+}
+
+.nav-start {
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+
+.nav-end {
+  flex-grow: 1;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+  }
+
+  .main-nav {
+    list-style-type: none;
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .active {
+    display: block;
+  }
+}
