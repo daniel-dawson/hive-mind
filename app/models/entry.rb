@@ -1,3 +1,3 @@
 class Entry < ActiveRecord::Base
-  belongs_to :beekeeper
+  belongs_to :hive
 end
