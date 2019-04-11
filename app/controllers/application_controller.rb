@@ -13,4 +13,9 @@ class ApplicationController < Sinatra::Base
     erb :landing
   end
 
+  get '/search' do
+    @beekeepers = Beekeeper.all
+    erb :search
+  end
+
 end

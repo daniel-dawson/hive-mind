@@ -1,13 +1,14 @@
-class UsersController < ApplicationController
-  get '/users' do
+class BeekeepersController < ApplicationController
+  get '/beekeepers' do
+    @beekeepers = Beekeeper.all
+    erb :'/beekeepers/index'
+  end
+
+  get '/beekeepers/:id' do
 
   end
 
-  get '/user/:id' do
-
-  end
-
-  get '/user/:id/edit' do
+  get '/beekeepers/:id/edit' do
 
   end
 end
