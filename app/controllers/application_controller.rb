@@ -13,6 +13,18 @@ class ApplicationController < Sinatra::Base
     erb :landing
   end
 
+  get '/login' do
+
+  end
+
+  get '/signup' do
+
+  end
+
+  get '/logout' do
+    
+  end
+
   get '/search' do
     @beekeepers = Beekeeper.all
     erb :search
