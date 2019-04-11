@@ -6,4 +6,8 @@ end
 
 use Rack::MethodOverride
 use BeekeepersController
+use CommentsController
+use EntriesController
+use HivesController
+use PostsController
 run ApplicationController
