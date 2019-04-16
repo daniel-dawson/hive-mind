@@ -5,7 +5,7 @@ class BeekeepersController < ApplicationController
   end
 
   get '/beekeepers/:id' do
-
+    
   end
 
   get '/beekeepers/:id/edit' do

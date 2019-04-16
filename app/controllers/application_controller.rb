@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-    redirect 
+    redirect ''
   end
 
   get '/signup' do
