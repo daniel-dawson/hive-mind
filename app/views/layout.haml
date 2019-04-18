@@ -1,0 +1,45 @@
+
+!!! 5
+%html{lang: "en"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{charset: "utf-8"}/
+    %title HiveMind
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %script{crossorigin: "anonymous", defer: "defer", integrity: "sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ", src: "https://use.fontawesome.com/releases/v5.8.1/js/all.js"}
+    %link{href: "/stylesheets/normalize.css", rel: "stylesheet"}/
+    %link{href: "/stylesheets/main.css", rel: "stylesheet"}/
+  %body
+    %header
+      %nav.flex-container.nav-flex
+        %span#js-navbar-toggle.navbar-toggle
+          %i.fas.fa-bars
+        %img.logo{alt: "HiveMind logo", src: "images/food.png"}/
+        %ul.flex-container.nav-start.main-nav.js-menu
+          %li.nav-items-left
+            %a{href: "#"} News
+          %li.nav-items-left
+            %a{href: "/search"} Near you
+          %li.nav-items-left
+            %a{href: "#"} About
+        / These will be pofile and sign out buttons
+        %ul.flex-container.nav-end.main-nav.js-menu
+          - if logged_in?
+            %li.nav-items-right
+              %a{href: ""} Profile
+            %li.nav-items-right
+              %form{action: "/logout", method: "post"}
+                %input#hidden{name: "_method", type: "hidden", value: "delete"}/
+          - else
+            %li.nav-items-right
+              %a{href: "/login"} Login
+            %li.nav-items-right
+              %a{href: "/signup"} Signup
+    .main-wrapper
+      = yield
+      %footer.branding
+        %small
+          © 2019
+          %strong HiveMind
+    %script{src: "javascripts/index.js"}
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"}
