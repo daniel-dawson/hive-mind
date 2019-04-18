@@ -19,7 +19,7 @@
         <span class="navbar-toggle" id="js-navbar-toggle">
           <i class="fas fa-bars"></i>
         </span>
-      <img class="logo" src="images/food.png" alt="HiveMind logo"/>
+        <img class="logo" src="images/food.png" alt="HiveMind logo"/>
         <ul class="flex-container nav-start main-nav js-menu ">
 
           <li class="nav-items-left">
@@ -34,7 +34,7 @@
         </ul>
         <!-- These will be pofile and sign out buttons -->
 
-        <ul class="flex-container nav-end main-nav js-menu nav-items-right">
+        <ul class="flex-container nav-end main-nav js-menu">
           <% if logged_in? %>
             <li class="nav-items-right"><a href="">Profile</a></li>
             <li class="nav-items-right">
@@ -42,6 +42,8 @@
                 <input id="hidden" type="hidden" name="_method" value="delete">
               </form>
             </li>
+          <% else %>
+            <li class="nav-items-right"><a href="/login">Login</a></li>
           <% end %>
         </ul>
       </nav>
