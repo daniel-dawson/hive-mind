@@ -8,6 +8,10 @@ ul {
   list-style: none;
 }
 
+.main-wrapper {
+  margin-top: 100px;
+}
+
 /* Utility */
 
 .flex-container {
@@ -17,13 +21,21 @@ ul {
 /* Navigation Bar */
 
 nav {
-  font-size: 18px;
+  font-size: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  left: 0;
   margin-bottom: 10px;
+  max-height: 35px;
   padding: 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
 }
 
 .logo {
+  height: 50px;
+  width: auto;
 }
 
 .nav-flex {
@@ -46,7 +58,7 @@ nav {
 .nav-end {
   flex-grow: 1;
   justify-content: flex-end;
-  margin-right: 30px;
+  margin-right: 50px;
 }
 
 .navbar-toggle {
