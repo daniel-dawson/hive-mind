@@ -3,7 +3,7 @@ require_relative 'concerns/helpers'
 
 class ApplicationController < Sinatra::Base
   include Helpers
-  
+
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'

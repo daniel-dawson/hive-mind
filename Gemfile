@@ -13,6 +13,7 @@ gem 'foreman'
 gem 'dotenv'
 gem 'tux'
 gem 'sinatra-flash'
+gem 'haml'
 
 group :development do
   gem 'sqlite3', '~>1.3.6'

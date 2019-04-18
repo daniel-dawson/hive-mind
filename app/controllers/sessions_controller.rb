@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   get '/login' do
-    erb :login
+    haml :'/sessions/login'
   end
 
   post '/login' do
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   end
 
   get '/signup' do
-    erb :signup
+    haml :'/sessions/signup'
   end
 
   delete '/logout' do
