@@ -1,0 +1,19 @@
+.signup-form
+  %form.signup-form{action: "/beekeepers", method: "post" }
+    %input#username{ type: "text"}
+    %input#email{ type: "text"}
+    %input#password{ type: "text"}
+    %select#experience{ name: "experience"}
+      %option{ select: "selected", value: "" }
+        Experience level
+      %option{ value: "novice"}
+        Novice
+      %option{ value: "apprentice"}
+        Apprentice
+      %option{ value: "journeyman"}
+        Journeyman
+      %option{ value: "master"}
+        Master
+    %br
+    %label{ for: "city"} City:
+    %input#city{ type: "text"}
