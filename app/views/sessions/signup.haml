@@ -1,8 +1,8 @@
-.signup-form
+.signup-form-container
   %form.signup-form{action: "/beekeepers", method: "post" }
-    %input#username{ type: "text"}
-    %input#email{ type: "text"}
-    %input#password{ type: "text"}
+    %input#username{ placeholder: "Username", type: "text"}
+    %input#email{ placeholder: "Email", type: "text"}
+    %input#password{ placeholder: "Password", type: "text"}
     %select#experience{ name: "experience"}
       %option{ select: "selected", value: "" }
         Experience level
@@ -14,6 +14,4 @@
         Journeyman
       %option{ value: "master"}
         Master
-    %br
-    %label{ for: "city"} City:
-    %input#city{ type: "text"}
+    %input#city{ placeholder: "City", type: "text"}

@@ -92,5 +92,5 @@ nav {
   width: 440px;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 10px;
-  min-height: initial;
+  min-height: 400px;
 }
