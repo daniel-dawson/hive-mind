@@ -38,7 +38,7 @@
           <% if logged_in? %>
             <li class="nav-items-right"><a href="">Profile</a></li>
             <li class="nav-items-right">
-              <form action="/signout" method="post">
+              <form action="/logout" method="post">
                 <input id="hidden" type="hidden" name="_method" value="delete">
               </form>
             </li>
