@@ -4,15 +4,17 @@ class SessionsController < ApplicationController
   end
 
   post '/login' do
-    redirect ''
+    # Instantiate beekeeper here
+    redirect "/beekeepers/#{beekeeper.id}"
   end
 
   get '/signup' do
     erb :signup
   end
 
-  get '/logout' do
+  delete '/logout' do
     session.clear
-    redirect '/'
+    @current_user = nil
+    redirect '/login'
   end
 end

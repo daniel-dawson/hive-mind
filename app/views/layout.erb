@@ -35,8 +35,14 @@
         <!-- These will be pofile and sign out buttons -->
 
         <ul class="flex-container nav-end main-nav js-menu nav-items-right">
-          <li class="nav-items-right">Profile</li>
-          <li class="nav-items-right">Sign out</li>
+          <% if logged_in? %>
+            <li class="nav-items-right"><a href="">Profile</a></li>
+            <li class="nav-items-right">
+              <form action="/signout" method="post">
+                <input id="hidden" type="hidden" name="_method" value="delete">
+              </form>
+            </li>
+          <% end %>
         </ul>
       </nav>
     </header>
