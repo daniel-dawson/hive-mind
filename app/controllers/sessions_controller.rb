@@ -4,8 +4,14 @@ class SessionsController < ApplicationController
   end
 
   post '/login' do
-    # Instantiate beekeeper here
-    redirect "/beekeepers/#{beekeeper.id}"
+    beekeeper = Beekeeper.find_by(email: params[:beekeeper][:email])
+    if beekeeper && beekeeper.authenticate(params[:beekeeper][:password])
+      log_in beekeeper
+      redirect "/beekeepers/#{beekeeper.username}"
+    else
+      redirect '/login'
+    end
+
   end
 
   get '/signup' do
