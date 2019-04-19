@@ -5,7 +5,7 @@ class BeekeepersController < ApplicationController
   end
 
   post '/beekeepers' do
-    
+    beekeeper = Beekeeper.create(params[:beekeeper])
   end
 
   get '/beekeepers/:id' do

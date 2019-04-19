@@ -1,5 +1,5 @@
 class Beekeeper < ActiveRecord::Base
-  validates :username, :email, :experience_level, :location, presence: true
+  validates :username, :email, :experience, :location, presence: true
   validates :username, :email, uniqueness: { case_sensitive: false }
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
   validates :username, format: { with: /\A\w+\z/i }

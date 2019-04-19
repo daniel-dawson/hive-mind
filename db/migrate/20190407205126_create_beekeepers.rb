@@ -4,7 +4,7 @@ class CreateBeekeepers < ActiveRecord::Migration
       t.string :username
       t.string :password_digest
       t.string :email
-      t.integer :years_experience
+      t.integer :experience
       t.string :location
       t.timestamps
     end
