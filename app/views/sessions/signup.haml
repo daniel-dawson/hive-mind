@@ -1,6 +1,11 @@
+-if flash[:errors]
+  #flash-errors
+    %ul
+      -flash[:errors].messages.each do |attribute, value|
+        %li= "#{attribute.to_s.capitalize} #{value.join(" and ")}"
 .signup-container
   .signup-message
-    Join the HiveMind
+    Join HiveMind
     %br
     %span
       Access all the buzz with a free account

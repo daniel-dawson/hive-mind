@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
   end
 
   get '/signup' do
-    @beekeeper = nil
     haml :'/sessions/signup'
   end
 

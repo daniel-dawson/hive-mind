@@ -35,11 +35,11 @@
               %a{href: "/login"} Login
             %li.nav-items-right
               %a{href: "/signup"} Signup
-    .main-wrapper
+    %main.main-wrapper
       = yield
-      %footer.branding
-        %small
-          © 2019
-          %strong HiveMind
+    %footer.branding
+      %small
+        © 2019
+        %strong HiveMind
     %script{src: "javascripts/index.js"}
     %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"}

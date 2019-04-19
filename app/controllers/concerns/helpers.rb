@@ -6,4 +6,12 @@ module Helpers
   def logged_in?
     !session[:user_id].nil?
   end
+
+  def pluralize(quantity, singular, plural)
+    if quantity == 1
+        "1 #{singular}"
+    else
+        "#{quantity} #{plural}"
+    end
+  end
 end
