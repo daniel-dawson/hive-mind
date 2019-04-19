@@ -11,11 +11,13 @@ module Helpers
     session[:user_id] = user.id
   end
 
-  def pluralize(quantity, singular, plural)
+  def pluralize(quantity, singular, plural = nil)
     if quantity == 1
-        "1 #{singular}"
+      "1 #{singular}"
+    elsif plural
+      "#{quantity} #{plural}"
     else
-        "#{quantity} #{plural}"
+      "#{quantity} #{singular}s"
     end
   end
 end
