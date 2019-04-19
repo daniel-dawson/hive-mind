@@ -7,7 +7,7 @@ module Helpers
     !session[:user_id].nil?
   end
 
-  def login(user)
+  def log_in(user)
     session[:user_id] = user.id
   end
 
