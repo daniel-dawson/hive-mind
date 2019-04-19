@@ -14,7 +14,7 @@
       %nav.flex-container.nav-flex
         %span#js-navbar-toggle.navbar-toggle
           %i.fas.fa-bars
-        %img.logo{alt: "HiveMind logo", src: "images/food.png"}/
+        %img.logo{alt: "HiveMind logo", src: "/images/food.png"}/
         %ul.flex-container.nav-start.main-nav.js-menu
           %li.nav-items-left
             %a{href: "#"} News
@@ -26,10 +26,11 @@
         %ul.flex-container.nav-end.main-nav.js-menu
           - if logged_in?
             %li.nav-items-right
-              %a{href: ""} Profile
+              %a{href: "/beekeepers/#{current_user.username}"} Profile
             %li.nav-items-right
-              %form{action: "/logout", method: "post"}
+              %form#delete-form{action: "/logout", method: "post"}
                 %input#hidden{name: "_method", type: "hidden", value: "delete"}/
+                %input{ type: "submit", value: "Logout"}
           - else
             %li.nav-items-right
               %a{href: "/login"} Login
