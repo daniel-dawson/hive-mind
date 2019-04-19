@@ -8,6 +8,7 @@ class BeekeepersController < ApplicationController
   post '/beekeepers' do
     beekeeper = Beekeeper.new(params[:beekeeper])
     if beekeeper.save
+      session[:user_id] = beekeeper.id
       redirect "/beekeepers/#{beekeeper.username}"
     else
       flash[:errors] = beekeeper.errors
@@ -15,8 +16,9 @@ class BeekeepersController < ApplicationController
     end
   end
 
-  get '/beekeepers/:username' do
-
+  get '/beekeepers/:username' do |username|
+    @beekeeper = Beekeeper.find_by(username: username)
+    haml :"beekeepers/show"
   end
 
   get '/beekeepers/:username/edit' do
