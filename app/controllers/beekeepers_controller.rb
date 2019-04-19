@@ -4,8 +4,12 @@ class BeekeepersController < ApplicationController
     erb :'/beekeepers/index'
   end
 
-  get '/beekeepers/:id' do
+  post '/beekeepers' do
     
+  end
+
+  get '/beekeepers/:id' do
+
   end
 
   get '/beekeepers/:id/edit' do
