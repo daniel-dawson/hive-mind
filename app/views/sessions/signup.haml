@@ -1,17 +1,19 @@
-.signup-form-container
-  %form.signup-form{action: "/beekeepers", method: "post" }
-    %input#username{ placeholder: "Username", type: "text"}
-    %input#email{ placeholder: "Email", type: "text"}
-    %input#password{ placeholder: "Password", type: "text"}
-    %select#experience{ name: "experience"}
-      %option{ select: "selected", value: "" }
-        Experience level
-      %option{ value: "novice"}
-        Novice
-      %option{ value: "apprentice"}
-        Apprentice
-      %option{ value: "journeyman"}
-        Journeyman
-      %option{ value: "master"}
-        Master
-    %input#city{ placeholder: "City", type: "text"}
+.signup-container
+  %form.signup-form.flex-container{action: "/beekeepers", method: "post" }
+    %input#username{ placeholder: "Username", name: "beekeeper[username]", type: "text"}
+    %input#email{ placeholder: "Email", name: "beekeeper[email]", type: "email"}
+    %input#password{ placeholder: "Password", name: "beekeeper[password]", type: "password"}
+    .custom-signup-select
+      %select#experience{ name: "beekeeper[experience]"}
+        %option{ select: "selected", value: "" }
+          Experience level
+        %option{ value: "novice"}
+          Novice
+        %option{ value: "apprentice"}
+          Apprentice
+        %option{ value: "journeyman"}
+          Journeyman
+        %option{ value: "master"}
+          Master
+    %input#city{ placeholder: "City", name: "beekeeper[city]", type: "text"}
+    %input.signup-button{ type: "submit", value: "Signup"}
