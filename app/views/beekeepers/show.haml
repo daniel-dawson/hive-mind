@@ -1,2 +1,8 @@
 #profile-info.flex-container
-  %h1 #{@beekeeper.username}'s Profile
+  %div
+    %h1 #{@beekeeper.username}'s Profile
+    .beekeeper-details
+      %ul
+        %li #{@beekeeper.experience} beekeeper
+        %li Located in #{@beekeeper.location.capitalize}
+      
