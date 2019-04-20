@@ -35,7 +35,7 @@ nav {
   font-weight: bold;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   left: 0;
-  max-height: 50px;
+  height: 50px;
   position: fixed;
   right: 0;
   top: 0;
@@ -87,7 +87,7 @@ nav {
   .navbar-toggle {
     display: block;
     position: absolute;
-    top: 20px;
+    top: 13px;
     right: 30px;
     cursor: pointer;
     font-size: 24px;
