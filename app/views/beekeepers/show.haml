@@ -1,6 +1,13 @@
 #profile-info.flex-container
-  %div
-    %h1 #{@beekeeper.username}'s Profile
+  .user-header.flex-container
+    %h1
+      #{@beekeeper.username}'s profile
+      -if is_page_owner?(@beekeeper)
+        %p.edit-profile-link
+          (
+          %a{href: "/beekeepers/#{@beekeeper.username}/edit"}
+            edit
+          )
     .beekeeper-details
       %ul
         %li #{@beekeeper.experience.capitalize} beekeeper

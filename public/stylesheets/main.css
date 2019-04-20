@@ -211,6 +211,25 @@ input[type="submit"].login-button {
   cursor: pointer;
 }
 
+/* Profile page */
+.user-header {
+  align-items: center;
+  font-size: 1.3em;
+  height: 20%;
+  justify-content: space-around;
+  padding: 2em 1.1em;
+  width: 100%;
+}
+
+.beekeeper-details li {
+  margin-bottom: 15px;
+}
+
+p.edit-profile-link {
+  display: inline;
+  font-size: 16px;
+}
+
 /* Footer */
 
 footer {
