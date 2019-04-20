@@ -1,4 +1,9 @@
-%form(action="/login" method="post")
-  %input(placeholder="Email" type="text" name="beekeeper[email]")
-  %input(placeholder="Password" type="password" name="beekeeper[password]")
-  %input(type="submit" value="Log In")
+.login-container
+  .login-message Log in to see more
+  %form.login-form.flex-container(action="/login" method="post")
+    %input(placeholder="Email" type="text" name="beekeeper[email]")
+    %input(placeholder="Password" type="password" name="beekeeper[password]")
+    %input.login-button(type="submit" value="Log In")
+  %hr.divider
+  .form-footer
+    %a{ href: "/signup" } Not a member of HiveMind? Sign up.
