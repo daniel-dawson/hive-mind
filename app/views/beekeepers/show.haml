@@ -3,6 +3,5 @@
     %h1 #{@beekeeper.username}'s Profile
     .beekeeper-details
       %ul
-        %li #{@beekeeper.experience} beekeeper
+        %li #{@beekeeper.experience.capitalize} beekeeper
         %li Located in #{@beekeeper.location.capitalize}
-      
