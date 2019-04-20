@@ -1,6 +1,6 @@
 module Helpers
   def current_user
-    @current_user ||= Beekeeper.find(session[:user_id])
+    @current_user ||= Beekeeper.find(session[:user_id]) if logged_in?
   end
 
   def logged_in?
@@ -14,6 +14,10 @@ module Helpers
   def log_out
     session.delete(:user_id)
     @current_user = nil
+  end
+
+  def user_owns_content?(user)
+    current_user.id == user.id
   end
 
   def pluralize(quantity, singular, plural = nil)
