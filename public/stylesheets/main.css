@@ -3,6 +3,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: inherit;
+}
+
 ul {
   list-style: none;
 }
@@ -22,8 +26,9 @@ ul {
 
 /* Flash */
 #flash {
-  margin: 20px 0;
-  padding: 2px 0;
+  box-sizing: border-box;
+  margin-top: 25px;
+  padding: 14px 0;
   text-align: center;
 }
 
@@ -32,7 +37,7 @@ ul {
 }
 
 .flash-orange {
-  background: #f7c96c;
+  background: rgba(247, 201, 108, 0.7);
 }
 
 .flash-green {
