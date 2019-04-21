@@ -17,19 +17,18 @@
         %img.logo{alt: "HiveMind logo", src: "/images/food.png"}/
         %ul.flex-container.nav-start.main-nav.js-menu
           %li.nav-items-left
-            %a{href: "#"} News
+            %a{href: "#"} Browse
           %li.nav-items-left
             %a{href: "/search"} Near you
           %li.nav-items-left
             %a{href: "#"} About
-        / These will be pofile and sign out buttons
         %ul.flex-container.nav-end.main-nav.js-menu
           - if logged_in?
             %li.nav-items-right
               %a{href: "/beekeepers/#{current_user.username}"} Profile
             %li.nav-items-right
               %form#delete-form{action: "/logout", method: "post"}
-                %input#hidden{name: "_method", type: "hidden", value: "delete"}/
+                %input#hidden{name: "_method", type: "hidden", value: "delete"}
                 %input{ type: "submit", value: "Logout"}
           - else
             %li.nav-items-right
@@ -37,13 +36,12 @@
             %li.nav-items-right
               %a{href: "/signup"} Sign Up
     %main.main-wrapper
-      #flash
-        -if flash[:warning]
-          %p.flash-red= flash[:warning]
-        -if flash[:notice]
-          %p.flash-orange= flash[:notice]
-        -if flash[:success]
-          %p.flash-green= flash[:success]
+      -if flash[:warning]
+        #flash.flash-red= flash[:warning]
+      -if flash[:notice]
+        #flash.flash-orange= flash[:notice]
+      -if flash[:success]
+        #flash.flash-green= flash[:success]
       = yield
     %footer.branding
       %small
