@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       log_in beekeeper
       redirect "/beekeepers/#{beekeeper.username}"
     else
+      flash[:notice] = "Login failed. Please try again, or sign up"
       redirect '/login'
     end
 
