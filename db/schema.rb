@@ -14,11 +14,10 @@
 ActiveRecord::Schema.define(version: 20190407205231) do
 
   create_table "beekeepers", force: :cascade do |t|
-    t.string   "name"
     t.string   "username"
     t.string   "password_digest"
     t.string   "email"
-    t.integer  "years_experience"
+    t.string   "experience"
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"

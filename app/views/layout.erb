@@ -19,10 +19,7 @@
         <span class="navbar-toggle" id="js-navbar-toggle">
           <i class="fas fa-bars"></i>
         </span>
-
-        <div class="nav-img-container">
-          <img class="logo" src="images/food.png" alt="HiveMind logo"/>
-        </div>
+        <img class="logo" src="/images/food.png" alt="HiveMind logo"/>
         <ul class="flex-container nav-start main-nav js-menu ">
 
           <li class="nav-items-left">
@@ -37,9 +34,19 @@
         </ul>
         <!-- These will be pofile and sign out buttons -->
 
-        <ul class="flex-container nav-end main-nav js-menu nav-items-right">
-          <li class="nav-items-right">Profile</li>
-          <li class="nav-items-right">Sign out</li>
+        <ul class="flex-container nav-end main-nav js-menu">
+          <% if logged_in? %>
+            <li class="nav-items-right"><a href="/beekeepers/<%= current_user.username %>">Profile</a></li>
+            <li class="nav-items-right">
+              <form id="logout-form" action="/logout" method="post">
+                <input id="hidden" type="hidden" name="_method" value="delete">
+                <input type="submit" value="Log Out">
+              </form>
+            </li>
+          <% else %>
+            <li class="nav-items-right"><a href="/login">Log In</a></li>
+            <li class="nav-items-right"><a href="/signup">Sign Up</a></li>
+          <% end %>
         </ul>
       </nav>
     </header>

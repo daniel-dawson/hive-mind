@@ -10,4 +10,5 @@ use CommentsController
 use EntriesController
 use HivesController
 use PostsController
+use SessionsController
 run ApplicationController

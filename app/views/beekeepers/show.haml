@@ -1,0 +1,14 @@
+#profile-info.flex-container
+  .user-header.flex-container
+    %h1
+      #{@beekeeper.username}'s profile
+      -if logged_in? && is_page_owner?(@beekeeper)
+        %p.edit-profile-link
+          (
+          %a{href: "/beekeepers/#{@beekeeper.username}/edit"}
+            edit
+          )
+    .beekeeper-details
+      %ul
+        %li #{@beekeeper.experience.capitalize} beekeeper
+        %li Located in #{@beekeeper.location.capitalize}
