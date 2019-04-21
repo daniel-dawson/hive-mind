@@ -37,6 +37,13 @@
             %li.nav-items-right
               %a{href: "/signup"} Sign Up
     %main.main-wrapper
+      #flash
+        -if flash[:warning]
+          %p.flash-red= flash[:warning]
+        -if flash[:notice]
+          %p.flash-orange= flash[:notice]
+        -if flash[:success]
+          %p.flash-green= flash[:success]
       = yield
     %footer.branding
       %small

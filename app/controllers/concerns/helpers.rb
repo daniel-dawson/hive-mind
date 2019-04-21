@@ -20,6 +20,15 @@ module Helpers
     current_user.id == user.id
   end
 
+  def get_beekeeper_with_username_or_redirect(username)
+    if beekeeper = Beekeeper.find_by(username: username)
+      beekeeper
+    else
+      flash[:warning] = "#{username} does not exist"
+      redirect '/'
+    end
+  end
+
   def pluralize(quantity, singular, plural = nil)
     if quantity == 1
       "1 #{singular}"

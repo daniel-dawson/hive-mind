@@ -2,7 +2,7 @@
   .user-header.flex-container
     %h1
       #{@beekeeper.username}'s profile
-      -if is_page_owner?(@beekeeper)
+      -if logged_in? && is_page_owner?(@beekeeper)
         %p.edit-profile-link
           (
           %a{href: "/beekeepers/#{@beekeeper.username}/edit"}

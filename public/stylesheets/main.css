@@ -20,12 +20,23 @@ ul {
   display: flex;
 }
 
-/* Errors */
-#flash-errors {
-  background: #f9bdbd;
+/* Flash */
+#flash {
   margin: 20px 0;
   padding: 2px 0;
   text-align: center;
+}
+
+.flash-red {
+  background: #f9bdbd;
+}
+
+.flash-orange {
+  background: #f7c96c;
+}
+
+.flash-green {
+  background: #a9ea8f;
 }
 
 /* Navigation Bar */

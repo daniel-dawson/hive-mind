@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :landing
+    haml :landing
   end
 
   get '/search' do

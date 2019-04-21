@@ -17,12 +17,12 @@ class BeekeepersController < ApplicationController
   end
 
   get '/beekeepers/:username' do |username|
-    @beekeeper = get_beekeeper_with_username username
+    @beekeeper = get_beekeeper_with_username_or_redirect username
     haml :"beekeepers/show"
   end
 
   get '/beekeepers/:username/edit' do |username|
-    @beekeeper = get_beekeeper_with_username username
+    @beekeeper = get_beekeeper_with_username_or_redirect username
     if is_page_owner? @beekeeper
       haml :'beekeepers/edit'
     else
@@ -31,9 +31,4 @@ class BeekeepersController < ApplicationController
     end
   end
 
-  private
-
-  def get_beekeeper_with_username(username)
-    Beekeeper.find_by(username: username)
-  end
 end
