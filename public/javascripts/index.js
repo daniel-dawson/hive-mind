@@ -6,3 +6,9 @@ navBarToggle.addEventListener("click", function() {
     nav.classList.toggle("active");
   });
 });
+
+let flashMessage = document.querySelector("#flash");
+
+flashMessage.addEventListener("click", () => {
+  flashMessage.classList.add("hidden");
+});

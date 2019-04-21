@@ -24,6 +24,14 @@ ul {
   display: flex;
 }
 
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
 /* Flash */
 #flash {
   box-sizing: border-box;
@@ -107,10 +115,6 @@ nav {
     right: 30px;
     cursor: pointer;
     font-size: 24px;
-  }
-
-  .active {
-    display: block;
   }
 }
 
