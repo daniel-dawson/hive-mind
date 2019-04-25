@@ -1,5 +1,6 @@
 /* Global Styles */
 a {
+  color: black;
   text-decoration: none;
 }
 
@@ -22,10 +23,6 @@ ul {
 /* Utility */
 .flex-container {
   display: flex;
-}
-
-.active {
-  display: block;
 }
 
 .hidden {
@@ -84,6 +81,18 @@ nav {
   margin-left: 40px;
 }
 
+.nav-items-left,
+.nav-items-right {
+  padding: 5px 10px;
+  transition: background 0.4s;
+}
+
+.nav-items-left:hover,
+.nav-items-right:hover {
+  background: rgba(255, 233, 168, 0.9);
+  border-radius: 5px;
+}
+
 .nav-start {
   flex-grow: 1;
   justify-content: flex-start;
@@ -116,6 +125,41 @@ nav {
     cursor: pointer;
     font-size: 24px;
   }
+
+  .active {
+    display: block;
+  }
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  border-radius: 7px;
+  display: none;
+  position: absolute;
+  background: rgba(255, 233, 168, 0.9);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  transition: background 0.4s;
+}
+
+.dropdown-content a:hover {
+  background: rgba(255, 221, 122, 0.9);
+}
+
+.dropdown .dropdown-content {
+  transition: display 0.4s;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Logout link */
@@ -237,8 +281,9 @@ input[type="submit"].login-button {
   font-size: 1.3em;
   height: 20%;
   justify-content: space-around;
+  margin: auto;
   padding: 2em 1.1em;
-  width: 100%;
+  width: 80%;
 }
 
 .beekeeper-details li {
