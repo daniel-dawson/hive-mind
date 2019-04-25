@@ -7,6 +7,7 @@
     %title HiveMind
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     %script{crossorigin: "anonymous", defer: "defer", integrity: "sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ", src: "https://use.fontawesome.com/releases/v5.8.1/js/all.js"}
+    %link(rel="shortcut icon" href="/images/food.png" type="image/png")
     %link{href: "/stylesheets/normalize.css", rel: "stylesheet"}/
     %link{href: "/stylesheets/main.css", rel: "stylesheet"}/
   %body
@@ -16,8 +17,13 @@
           %i.fas.fa-bars
         %img.logo{alt: "HiveMind logo", src: "/images/food.png"}/
         %ul.flex-container.nav-start.main-nav.js-menu
-          %li.nav-items-left
-            %a{href: "#"} Browse
+          %li.nav-items-left.dropdown
+            Browse
+            %i.fa.fa-caret-down
+            .dropdown-content
+              %a(href="/beekeepers") Beekeepers
+              %a(href="/hives") Hives
+              %a(href="/articles") Articles
           %li.nav-items-left
             %a{href: "/search"} Near you
           %li.nav-items-left
