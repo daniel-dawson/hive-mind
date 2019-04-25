@@ -16,7 +16,7 @@ module Helpers
     @current_user = nil
   end
 
-  def is_page_owner?(user)
+  def current_user?(user)
     current_user.id == user.id
   end
 

@@ -23,7 +23,7 @@ class BeekeepersController < ApplicationController
 
   get '/beekeepers/:username/edit' do |username|
     @beekeeper = get_beekeeper_with_username_or_redirect username
-    if logged_in? && is_page_owner?(@beekeeper)
+    if logged_in? && current_user?(@beekeeper)
       haml :'beekeepers/edit'
     else
       flash[:warning] = "Unauthorized access"
