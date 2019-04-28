@@ -1,1 +1,14 @@
-Edit Page
+-if flash[:errors]
+  #flash.flash-red
+    %ul
+      -flash[:errors].messages.each do |attribute, value|
+        %li= "#{attribute.to_s.capitalize} #{value.join(" and ")}"
+.signup-container
+  .signup-message
+    Join HiveMind
+    %br
+    %span
+      Access all the buzz with a free account
+  %form.signup-form.flex-container{action: "/beekeepers/#{@beekeeper.username}",
+    method: "post" }
+    = haml :'sessions/user_form_partial'

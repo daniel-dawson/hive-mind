@@ -1,0 +1,36 @@
+%input#username{ @beekeeper ? {value: "#{@beekeeper.username}"} : {placeholder: "Username"},
+  name: "beekeeper[username]",
+  type: "text",
+  autofocus: "true" }
+%input#email{ @beekeeper ? {value: "#{@beekeeper.email}"} : {placeholder: "Email"},
+  name: "beekeeper[email]",
+  type: "email"}
+-if !@beekeeper
+  %input#password{ placeholder: "Password",
+    name: "beekeeper[password]",
+    type: "password"}
+.custom-signup-select
+  %select#experience{ name: "beekeeper[experience]"}
+    %option{ !@beekeeper ? {selected: "selected"} : {},
+      value: "" }
+      Experience level
+    %option{ @beekeeper && @beekeeper.experience == "novice" ? {selected: "selected"} : {},
+      value: "novice"}
+      Novice
+    %option{ @beekeeper && @beekeeper.experience == "apprentice" ? {selected: "selected"} : {},
+      value: "apprentice"}
+      Apprentice
+    %option{ @beekeeper && @beekeeper.experience == "journeyman" ? {selected: "selected"} : {},
+      value: "journeyman"}
+      Journeyman
+    %option{ @beekeeper && @beekeeper.experience == "master" ? {selected: "selected"} : {},
+      value: "master"}
+      Master
+%input#city{ @beekeeper ? {value: "#{@beekeeper.location}"} : {placeholder: "City"},
+  name: "beekeeper[location]",
+  type: "text"}
+- if @beekeeper
+  %input#hidden{ type: "hidden", type: "hidden", name: "_method", value: "patch" }
+  %input.signup-button{ type: "submit", value: "Save"}
+-else
+  %input.signup-button{ type: "submit", value: "Signup"}
