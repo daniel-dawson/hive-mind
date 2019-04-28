@@ -23,11 +23,21 @@ class BeekeepersController < ApplicationController
 
   get '/beekeepers/:username/edit' do |username|
     @beekeeper = get_beekeeper_with_username_or_redirect username
-    if logged_in? && current_user?(@beekeeper)
+    if authorized? @beekeeper
       haml :'beekeepers/edit'
     else
       flash[:warning] = "Unauthorized access"
       redirect '/'
+    end
+  end
+
+  patch '/beekeepers/:username' do |username|
+    beekeeper = get_beekeeper_with_username_or_redirect username
+    if beekeeper.update(params[:beekeeper])
+      redirect "/beekeepers/#{beekeeper.username}"
+    else
+      flash[:errors] = beekeeper.errors
+      redirect "/beekeepers/#{username}/edit"
     end
   end
 
