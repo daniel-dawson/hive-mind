@@ -2,7 +2,7 @@ require 'pry'
 class BeekeepersController < ApplicationController
   get '/beekeepers' do
     @beekeepers = Beekeeper.all
-    erb :'/beekeepers/index'
+    haml :'/beekeepers/index'
   end
 
   post '/beekeepers' do
