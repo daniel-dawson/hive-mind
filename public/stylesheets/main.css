@@ -8,7 +8,9 @@ a:visited {
   color: inherit;
 }
 
-ul {
+ul,
+ol,
+li {
   list-style: none;
 }
 
