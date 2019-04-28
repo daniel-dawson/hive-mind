@@ -1,0 +1,7 @@
+%h1 Beekeepers
+-if @beekeepers.count == 1
+  %p No beekeeper friends T_T
+-else
+  = list_of(@beekeepers, { class: "beekeeper-link" }) do |beekeeper|
+    %a{ href: "/beekeepers/#{beekeeper.username}" }
+      = beekeeper.username
