@@ -20,6 +20,10 @@ module Helpers
     current_user.id == user.id
   end
 
+  def authorized? user
+    logged_in? && current_user?(user)
+  end
+
   def get_beekeeper_with_username_or_redirect(username)
     if beekeeper = Beekeeper.find_by(username: username)
       beekeeper
