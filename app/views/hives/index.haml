@@ -1,0 +1,7 @@
+%h1 Hives
+-if @hives.count == 0
+  %p No hive friends T_T
+-else
+  = list_of(@hives, { class: "hive-link" }) do |hive|
+    %a{ href: "/beekeepers/#{hive.beekeeper.username}/hives/#{hive.name}" }
+      = hive.name
