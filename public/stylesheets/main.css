@@ -176,7 +176,8 @@ form#delete-form input[type="submit"] {
 
 /* Form Utility */
 .signup-message,
-.login-message {
+.login-message,
+.create-message {
   font-size: 34px;
   font-weight: bold;
 }
@@ -199,8 +200,9 @@ hr.divider {
   cursor: pointer;
 }
 
-/* Signup form */
-.signup-container {
+/* Signup/create form */
+.signup-container,
+.create-container {
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
   padding: 20px 10px;
@@ -208,7 +210,7 @@ hr.divider {
   width: 430px;
   margin: 30px auto;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 10px;
-  min-height: 500px;
+  min-height: 400px;
   text-align: center;
 }
 
@@ -217,7 +219,8 @@ hr.divider {
   font-weight: normal;
 }
 
-.signup-form {
+.signup-form,
+.create-form {
   align-items: center;
   flex-direction: column;
   height: 100%;
@@ -226,13 +229,15 @@ hr.divider {
   width: 100%;
 }
 
-.signup-form input {
+.signup-form input,
+.create-form input {
   margin-bottom: 30px;
   padding: 8px 12px;
   width: 80%;
 }
 
-.custom-signup-select {
+.custom-signup-select,
+.custom-create-select {
   margin-bottom: 30px;
   padding: 8px 12px;
 }

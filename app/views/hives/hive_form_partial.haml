@@ -1,0 +1,29 @@
+%input#username{ @hive ? {value: "#{@hive.name}"} : {placeholder: "Name"},
+  name: "hive[name]",
+  type: "text",
+  autofocus: "true" }
+%input#username{ @hive ? {value: "#{@hive.bee_type}"} : {placeholder: "Bee type"},
+  name: "hive[bee_type]",
+  type: "text" }
+.custom-create-select
+  %select#hive_type{ name: "hive[hive_type]"}
+    %option{ !@hive ? {selected: "selected"} : {},
+      value: "" }
+      Hive type
+    %option{ @hive && @hive.hive_type == "langstroth" ? {selected: "selected"} : {},
+      value: "langstroth"}
+      Langstroth
+    %option{ @hive && @hive.hive_type == "top-bar" ? {selected: "selected"} : {},
+      value: "top-bar"}
+      Top-bar
+    %option{ @hive && @hive.hive_type == "warre" ? {selected: "selected"} : {},
+      value: "warre"}
+      Warre
+%input#city{ @hive ? {value: "#{@hive.location}"} : {placeholder: "City"},
+  name: "hive[location]",
+  type: "text"}
+- if @hive
+  %input#hidden{ type: "hidden", type: "hidden", name: "_method", value: "patch" }
+  %input.signup-button{ type: "submit", value: "Save"}
+-else
+  %input.signup-button{ type: "submit", value: "Add"}
