@@ -11,3 +11,11 @@
         %li #{@beekeeper.experience.capitalize} beekeeper
         %li Located in #{@beekeeper.location.capitalize}
 %hr.divider
+.hive-container
+  %h1 Hives
+  -if @beekeeper.hives.count == 0
+    %p No hive friends T_T
+  -else
+    = list_of(@beekeeper.hives, { class: "hive-link" }) do |hive|
+      %a{ href: "/beekeepers/#{hive.beekeeper.username}/hives/#{hive.name}" }
+        = hive.name
