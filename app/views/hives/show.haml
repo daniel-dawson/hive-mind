@@ -1,2 +1,7 @@
 %h1 #{@hive.name}
-%p Owner: #{@beekeeper.username}
+%p
+  %a{:href => "/beekeepers/#{@hive.beekeeper.username}"}
+    Beekeeper: #{@hive.beekeeper.username}
+%p Hive type: #{@hive.hive_type.capitalize}
+%p Bee type: #{@hive.bee_type.capitalize}
+%p Located in #{@hive.location}
