@@ -26,7 +26,7 @@ class BeekeepersController < ApplicationController
     if authorized? @beekeeper
       haml :'beekeepers/edit'
     else
-      flash[:warning] = "Unauthorized access"
+      flash[:notice] = "You are not allowed to edit this user"
       redirect '/'
     end
   end
