@@ -9,6 +9,8 @@ navBarToggle.addEventListener("click", function() {
 
 let flashMessage = document.querySelector("#flash");
 
-flashMessage.addEventListener("click", () => {
-  flashMessage.classList.add("hidden");
-});
+if (flashMessage) {
+  flashMessage.addEventListener("click", () => {
+    flashMessage.classList.add("hidden");
+  });
+}
