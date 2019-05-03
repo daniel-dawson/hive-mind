@@ -1,0 +1,12 @@
+-if flash[:errors]
+  #flash.flash-red
+    %ul
+      -flash[:errors].each do |attribute, value|
+        %li= "#{attribute.to_s.capitalize} #{value.join(" and ")}"
+.create-container
+  .create-message
+    Edit hive details
+    %br
+  %form.create-form.flex-container{action: "/beekeepers/#{@beekeeper.username}/hives/#{@hive.name}",
+    method: "post" }
+    = haml :'hives/hive_form_partial'
