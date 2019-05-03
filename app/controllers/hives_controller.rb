@@ -34,6 +34,7 @@ class HivesController < ApplicationController
   get '/beekeepers/:username/hives/:name/edit' do |username, hive_name|
     @beekeeper = get_beekeeper_with_username_or_redirect username
     @hive = get_hive_by_user_and_name @beekeeper, hive_name
+    haml :'hives/edit'
   end
 
   patch '/beekeepers/:username/hives/:name' do |username, hive_name|
