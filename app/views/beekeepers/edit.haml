@@ -5,10 +5,10 @@
         %li= "#{attribute.to_s.capitalize} #{value.join(" and ")}"
 .signup-container
   .signup-message
-    Join HiveMind
+    #{@beekeeper.username}
     %br
     %span
-      Access all the buzz with a free account
+      Make changes to your account, then click save
   %form.signup-form.flex-container{action: "/beekeepers/#{@beekeeper.username}",
     method: "post" }
     = haml :'sessions/user_form_partial'

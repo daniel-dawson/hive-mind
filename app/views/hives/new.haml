@@ -1,7 +1,7 @@
 -if flash[:errors]
   #flash.flash-red
     %ul
-      -flash[:errors].messages.each do |attribute, value|
+      -flash[:errors].each do |attribute, value|
         %li= "#{attribute.to_s.capitalize} #{value.join(" and ")}"
 .create-container
   .create-message

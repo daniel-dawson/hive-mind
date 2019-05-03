@@ -4,10 +4,8 @@
       #{@beekeeper.username}'s profile
       -if logged_in? && current_user?(@beekeeper)
         %p.edit-profile-link
-          (
-          %a{href: "/beekeepers/#{@beekeeper.username}/edit"}
-            edit
-          )
+          = surround '(', ')' do
+            %a{href: "/beekeepers/#{@beekeeper.username}/edit"} edit
     .beekeeper-details
       %ul
         %li #{@beekeeper.experience.capitalize} beekeeper

@@ -15,7 +15,7 @@ class HivesController < ApplicationController
     if hive.save
       redirect "/beekeepers/#{username}/hives/#{hive.name}"
     else
-      flash[:errors] = hive.errors
+      flash[:errors] = hive.errors.messages
       redirect "/beekeepers/#{username}/hives/new"
     end
   end
