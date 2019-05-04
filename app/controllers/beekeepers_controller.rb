@@ -18,6 +18,7 @@ class BeekeepersController < ApplicationController
 
   get '/beekeepers/:username' do |username|
     @beekeeper = get_beekeeper_with_username_or_redirect username
+    @hives = @beekeeper.hives
     haml :"beekeepers/show"
   end
 
