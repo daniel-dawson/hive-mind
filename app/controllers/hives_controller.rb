@@ -41,11 +41,15 @@ class HivesController < ApplicationController
     @beekeeper = get_beekeeper_with_username_or_redirect username
     @hive = get_hive_by_user_and_name @beekeeper, hive_name
     if @hive.update(params[:hive])
-      redirect "/beekeepers/#{username}/hives/#{hive_name}"
+      redirect "/beekeepers/#{username}/hives/#{@hive.name}"
     else
-      flash[:errors] = hive.errors.messages
+      flash[:errors] = @hive.errors.messages
       redirect "/beekeepers/#{username}/hives/#{hive_name}/edit"
     end
+  end
+
+  delete '/beekeepers/:username/hives/:name' do |username, hive_name|
+
   end
 
   private
