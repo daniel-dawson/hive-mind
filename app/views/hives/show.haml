@@ -5,10 +5,11 @@
 %p Hive type: #{@hive.hive_type.capitalize}
 %p Bee type: #{@hive.bee_type.capitalize}
 %p Located in #{@hive.location}
-%form{ action: "/beekeepers/#{@hive.beekeeper.username}/hives/#{@hive.name}/edit",
-  method: "get"}
-  %input{ type: "submit", value: "edit"}
-%form{ action: "/beekeepers/#{@hive.beekeeper.username}/hives/#{@hive.name}",
-  method: "post"}
-  %input#hidden{name: "_method", type: "hidden", value: "delete"}
-  %input{ type: "submit", value: "delete"}
+- if authorized? @hive.beekeeper
+  %form{ action: "/beekeepers/#{@hive.beekeeper.username}/hives/#{@hive.name}/edit",
+    method: "get"}
+    %input{ type: "submit", value: "edit"}
+  %form{ action: "/beekeepers/#{@hive.beekeeper.username}/hives/#{@hive.name}",
+    method: "post"}
+    %input#hidden{name: "_method", type: "hidden", value: "delete"}
+    %input{ type: "submit", value: "delete"}
