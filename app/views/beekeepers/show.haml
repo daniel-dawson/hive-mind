@@ -2,7 +2,7 @@
   .user-header.flex-container
     %h1
       #{@beekeeper.username}'s profile
-      -if logged_in? && current_user?(@beekeeper)
+      -if authorized? @beekeeper
         %p.edit-profile-link
           = surround '(', ')' do
             %a{href: "/beekeepers/#{@beekeeper.username}/edit"} edit
@@ -12,7 +12,12 @@
         %li Located in #{@beekeeper.location.capitalize}
 %hr.divider
 .hive-container
-  %h1 Hives
+  %h1
+    Hives
+    -if authorized? @beekeeper
+      %p.add-hive-link
+        = surround '(', ')' do
+          %a{href: "/beekeepers/#{@beekeeper.username}/hives/new"} add to apiary
   -if @beekeeper.hives.count == 0
     %p No hive friends T_T
   -else
