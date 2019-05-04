@@ -27,34 +27,52 @@ class HivesController < ApplicationController
 
   get '/beekeepers/:username/hives/:name' do |username, hive_name|
     @beekeeper = get_beekeeper_with_username_or_redirect username
-    @hive = get_hive_by_user_and_name @beekeeper, hive_name
+    @hive = get_hive_by_user_and_name_or_redirect @beekeeper, hive_name
     haml :'hives/show'
   end
 
   get '/beekeepers/:username/hives/:name/edit' do |username, hive_name|
     @beekeeper = get_beekeeper_with_username_or_redirect username
-    @hive = get_hive_by_user_and_name @beekeeper, hive_name
-    haml :'hives/edit'
+    @hive = get_hive_by_user_and_name_or_redirect @beekeeper, hive_name
+    if authorized? @beekeeper
+      haml :'hives/edit'
+    else
+      flash[:notice] = "You are not authorized to edit this hive"
+      redirect '/'
+    end
   end
 
   patch '/beekeepers/:username/hives/:name' do |username, hive_name|
-    @beekeeper = get_beekeeper_with_username_or_redirect username
-    @hive = get_hive_by_user_and_name @beekeeper, hive_name
-    if @hive.update(params[:hive])
-      redirect "/beekeepers/#{username}/hives/#{@hive.name}"
+    beekeeper = get_beekeeper_with_username_or_redirect username
+    hive = get_hive_by_user_and_name_or_redirect beekeeper, hive_name
+    if hive.update(params[:hive])
+      redirect "/beekeepers/#{username}/hives/#{hive.name}"
     else
-      flash[:errors] = @hive.errors.messages
+      flash[:errors] = hive.errors.messages
       redirect "/beekeepers/#{username}/hives/#{hive_name}/edit"
     end
   end
 
   delete '/beekeepers/:username/hives/:name' do |username, hive_name|
-
+    beekeeper = get_beekeeper_with_username_or_redirect username
+    hive = get_hive_by_user_and_name_or_redirect beekeeper, hive_name
+    if hive.destroy
+      flash[:success] = "Hive deleted"
+      redirect "/beekeepers/#{username}"
+    else
+      flash[:warning] = "Something went wrong"
+      redirect "/beekeepers/#{username}"
+    end
   end
 
   private
 
-  def get_hive_by_user_and_name(beekeeper, hive_name)
-    Hive.where(beekeeper_id: beekeeper.id, name: hive_name).first
+  def get_hive_by_user_and_name_or_redirect(beekeeper, hive_name)
+    if hive = Hive.where(beekeeper_id: beekeeper.id, name: hive_name).first
+      hive
+    else
+      flash[:warning] = "That hive does not exist"
+      redirect '/'
+    end
   end
 end
