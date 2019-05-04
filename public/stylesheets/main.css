@@ -297,7 +297,8 @@ input[type="submit"].login-button {
   margin-bottom: 15px;
 }
 
-p.edit-profile-link {
+p.edit-profile-link,
+p.add-hive-link {
   display: inline;
   font-size: 16px;
 }
