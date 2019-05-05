@@ -1,4 +1,3 @@
-require 'pry'
 class BeekeepersController < ApplicationController
   get '/beekeepers' do
     @beekeepers = Beekeeper.all
