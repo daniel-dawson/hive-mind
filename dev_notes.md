@@ -1,3 +1,4 @@
 Future plans:
 Add strong params
-Have hives index page for each user (view all function)
+Add placeholders for features not quite implemented
+Style existing pages (even just a little)
